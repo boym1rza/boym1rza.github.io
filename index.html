@@ -3,66 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Asoslari</title>
+    <title>Python Asoslari - Zamonaviy O'quv Platformasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        * { box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8;
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #306998;
+            background: linear-gradient(135deg, #306998, #1e3f66);
             color: white;
-            padding: 20px;
+            padding: 80px 20px;
             text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            font-size: 3.2em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
         }
         nav {
-            background-color: #333;
-            overflow: hidden;
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
-        nav a {
-            float: left;
-            display: block;
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav li a {
             color: white;
-            text-align: center;
-            padding: 14px 20px;
             text-decoration: none;
+            padding: 18px 25px;
+            display: block;
+            transition: background 0.3s ease;
         }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
+        nav li a:hover {
+            background-color: #34495e;
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section {
             background: white;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-8px);
         }
         h2 {
             color: #306998;
+            border-bottom: 3px solid #306998;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.4em;
         }
         pre {
-            background: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 10px;
             overflow-x: auto;
+            border-left: 5px solid #306998;
+            margin: 15px 0;
         }
         code {
-            font-family: Consolas, Monaco, monospace;
+            font-family: 'Courier New', monospace;
+        }
+        ul { padding-left: 25px; }
+        .registration {
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            max-width: 700px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .registration h2 {
+            border-bottom: none;
+        }
+        .registration form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .registration input {
+            padding: 14px;
+            font-size: 1.1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .registration button {
+            padding: 14px;
+            background: #306998;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .registration button:hover {
+            background: #1e3f66;
         }
         footer {
-            background-color: #333;
+            background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 25px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; }
+            header { padding: 60px 15px; }
+            header h1 { font-size: 2.5em; }
+            .container { padding: 0 15px; }
         }
     </style>
 </head>
@@ -70,95 +151,205 @@
 
     <header>
         <h1>Python Asoslari</h1>
-        <p>Python dasturlash tilini o'rganish uchun oddiy qo'llanma</p>
+        <p>Zamonaviy, qulay va bepul o'quv platforma. Pythonni noladan professional darajagacha o'rganing!</p>
     </header>
 
     <nav>
-        <a href="#kirish">Kirish</a>
-        <a href="#ozgaruvchilar">O'zgaruvchilar</a>
-        <a href="#malumot-turlari">Ma'lumot turlari</a>
-        <a href="#shart-operatorlari">Shart operatorlari</a>
-        <a href="#tsikllar">Tsikllar</a>
-        <a href="#funksiyalar">Funksiyalar</a>
+        <ul>
+            <li><a href="#kirish">Kirish</a></li>
+            <li><a href="#sintaksis">Asosiy Sintaksis</a></li>
+            <li><a href="#nazorat">Nazorat Strukturalari</a></li>
+            <li><a href="#funksiyalar">Funksiyalar va Modullar</a></li>
+            <li><a href="#malumot">Ma'lumot Strukturalari</a></li>
+            <li><a href="#fayllar">Fayllar bilan Ishlash</a></li>
+            <li><a href="#xatoliklar">Xatoliklar va Istisnolar</a></li>
+            <li><a href="#registratsiya">Registratsiya</a></li>
+        </ul>
     </nav>
 
     <div class="container">
 
-        <section id="kirish">
-            <h2>Kirish</h2>
-            <p>Python — bu oddiy va kuchli dasturlash tili. U o'qish oson va yangi boshlovchilar uchun juda mos.</p>
-            <p>Pythonni o'rnatish uchun rasmiy saytdan yuklab oling: <a href="https://www.python.org/">python.org</a></p>
-            
-            <h3>Salom Dunyo dasturi</h3>
-            <pre><code>print("Salom, Dunyo!")</code></pre>
+        <section id="kirish" class="section">
+            <h2>1. Kirish</h2>
+            <h3>1.1 Python nima?</h3>
+            <p>Yuqori darajali, interpretatsiya qilinadigan dasturlash tili. Oddiy va o'qishga qulay sintaksisga ega.</p>
+
+            <h3>1.2 Python tarixi</h3>
+            <p>Guido van Rossum tomonidan 1991-yilda yaratilgan. Hozirgi asosiy versiya — Python 3.</p>
+
+            <h3>1.3 Afzalliklari</h3>
+            <p>Katta kutubxonalar, tez ishlab chiqish, web, AI, avtomatlashtirish va boshqa sohalarda qo'llanilishi.</p>
+
+            <h3>1.4 O'rnatish</h3>
+            <p><a href="https://www.python.org/downloads/" target="_blank">python.org</a> saytidan yuklab oling.</p>
+
+            <h3>1.5 Birinchi dastur</h3>
+            <pre><code>print("Salom, Python dunyosi!")</code></pre>
+
+            <h3>1.6 IDLE va boshqa muharrirlar</h3>
+            <p>VS Code, PyCharm, Jupyter Notebook tavsiya etiladi.</p>
         </section>
 
-        <section id="ozgaruvchilar">
-            <h2>O'zgaruvchilar</h2>
-            <p>O'zgaruvchilar ma'lumotlarni saqlash uchun ishlatiladi. Python'da o'zgaruvchi e'lon qilish uchun tur ko'rsatish shart emas.</p>
-            <pre><code>x = 5
-y = "Matn"
-print(x)
-print(y)</code></pre>
+        <section id="sintaksis" class="section">
+            <h2>2. Asosiy Sintaksis</h2>
+            <h3>2.1 O'zgaruvchilar</h3>
+            <pre><code>x = 10
+ism = "Ali"</code></pre>
+
+            <h3>2.2 Ma'lumot turlari</h3>
+            <p>int, float, str, bool, list, tuple, set, dict.</p>
+
+            <h3>2.3 Operatorlar</h3>
+            <p>+, -, *, /, //, %, **, ==, !=, >, <, and, or, not.</p>
+
+            <h3>2.4 Sharhlar</h3>
+            <pre><code># Bir qatorli
+"""Ko'p qatorli sharh"""</code></pre>
+
+            <h3>2.5 Indentatsiya</h3>
+            <p>Bloklarni belgilash uchun 4 bo'shliq majburiy.</p>
+
+            <h3>2.6 Import qilish</h3>
+            <pre><code>import math
+from random import randint</code></pre>
+
+            <h3>2.7 Type conversion</h3>
+            <pre><code>int("5"), str(10), float(3)</code></pre>
         </section>
 
-        <section id="malumot-turlari">
-            <h2>Ma'lumot turlari</h2>
-            <p>Asosiy ma'lumot turlari:</p>
-            <ul>
-                <li>int - butun sonlar (masalan: 10)</li>
-                <li>float - haqiqiy sonlar (masalan: 3.14)</li>
-                <li>str - matn (masalan: "Hello")</li>
-                <li>bool - mantiqiy qiymatlar (True/False)</li>
-                <li>list - ro'yxat</li>
-                <li>dict - lug'at</li>
-            </ul>
-            <pre><code>son = 42  # int
-haqiqiy = 3.14  # float
-matn = "Python"  # str
-rost = True  # bool</code></pre>
-        </section>
-
-        <section id="shart-operatorlari">
-            <h2>Shart operatorlari (if-else)</h2>
-            <p>Shartlarni tekshirish uchun ishlatiladi.</p>
-            <pre><code>a = 10
-if a > 5:
-    print("a katta 5 dan")
-elif a == 5:
-    print("a teng 5 ga")
+        <section id="nazorat" class="section">
+            <h2>3. Nazorat Strukturalari</h2>
+            <h3>3.1 if-elif-else</h3>
+            <pre><code>if yosh >= 18:
+    print("Voyaga yetgan")
 else:
-    print("a kichik 5 dan")</code></pre>
-        </section>
+    print("Bola")</code></pre>
 
-        <section id="tsikllar">
-            <h2>Tsikllar</h2>
-            <p><strong>for</strong> tsikli:</p>
-            <pre><code>for i in range(5):
+            <h3>3.2 for tsikli</h3>
+            <pre><code>for i in range(1, 6):
     print(i)</code></pre>
-            
-            <p><strong>while</strong> tsikli:</p>
-            <pre><code>i = 0
-while i < 5:
-    print(i)
-    i += 1</code></pre>
+
+            <h3>3.3 while tsikli</h3>
+            <pre><code>son = 0
+while son < 5:
+    print(son)
+    son += 1</code></pre>
+
+            <h3>3.4 break, continue, pass</h3>
+            <p>break — tsiklni to'xtatish, continue — keyingi iteratsiyaga o'tish, pass — hech nima qilmaslik.</p>
+
+            <h3>3.5 Nested loops</h3>
+            <p>Ichma-ich tsikllar.</p>
         </section>
 
-        <section id="funksiyalar">
-            <h2>Funksiyalar</h2>
-            <p>Funksiyalarni def kalit so'zi bilan yaratiladi.</p>
-            <pre><code>def salom_ayt(ism):
-    print(f"Salom, {ism}!")
+        <section id="funksiyalar" class="section">
+            <h2>4. Funksiyalar va Modullar</h2>
+            <h3>4.1 def bilan funksiya yaratish</h3>
+            <pre><code>def kvadrat(son):
+    return son ** 2</code></pre>
 
-salom_ayt("Ali")</code></pre>
+            <h3>4.2 Parametrlar va argumentlar</h3>
+            <p>Default, keyword, *args, **kwargs.</p>
+
+            <h3>4.3 return</h3>
+            <p>Funksiyadan qiymat qaytarish.</p>
+
+            <h3>4.4 Lambda funksiyalar</h3>
+            <pre><code>kv = lambda x: x**2</code></pre>
+
+            <h3>4.5 Modullar</h3>
+            <pre><code>import mymodule
+mymodule.fun()</code></pre>
+
+            <h3>4.6 Paketlar (pip)</h3>
+            <p>requests, numpy, pandas va boshqalar.</p>
+
+            <h3>4.7 Built-in funksiyalar</h3>
+            <p>len(), type(), range(), sorted(), max(), min().</p>
         </section>
 
-        <p>Bu sayt Python asoslarini o'rganish uchun oddiy boshlanish. Keyingi qismlarni (masalan, ro'yxatlar, lug'atlar, fayllar bilan ishlash) o'zingiz qo'shishingiz mumkin!</p>
+        <section id="malumot" class="section">
+            <h2>5. Ma'lumot Strukturalari</h2>
+            <h3>5.1 Listlar</h3>
+            <p>append(), remove(), pop(), sort(), slicing.</p>
+
+            <h3>5.2 Tuple'lar</h3>
+            <p>O'zgarmas ro'yxatlar.</p>
+
+            <h3>5.3 Set'lar</h3>
+            <p>Takrorlanmas elementlar. add(), remove(), union(), intersection().</p>
+
+            <h3>5.4 Lug'atlar (dict)</h3>
+            <pre><code>talaba = {"ism": "Ali", "yosh": 20}</code></pre>
+
+            <h3>5.5 List comprehension</h3>
+            <pre><code>[x**2 for x in range(10)]</code></pre>
+
+            <h3>5.6 Dict comprehension</h3>
+            <p>{k: v for k, v in iterable}</p>
+        </section>
+
+        <section id="fayllar" class="section">
+            <h2>6. Fayllar bilan Ishlash</h2>
+            <h3>6.1 open() funksiyasi</h3>
+            <pre><code>with open("file.txt", "r", encoding="utf-8") as f:
+    matn = f.read()</code></pre>
+
+            <h3>6.2 O'qish usullari</h3>
+            <p>read(), readline(), readlines().</p>
+
+            <h3>6.3 Yozish</h3>
+            <p>"w" yoki "a" rejimlari.</p>
+
+            <h3>6.4 JSON bilan ishlash</h3>
+            <pre><code>import json
+json.dump(data, f)
+json.load(f)</code></pre>
+
+            <h3>6.5 CSV fayllar</h3>
+            <p>csv moduli yordamida.</p>
+        </section>
+
+        <section id="xatoliklar" class="section">
+            <h2>7. Xatoliklar va Istisnolar</h2>
+            <h3>7.1 try-except</h3>
+            <pre><code>try:
+    son = int("abc")
+except ValueError:
+    print("Raqam emas!")</code></pre>
+
+            <h3>7.2 except bir nechta</h3>
+            <p>except (TypeError, ZeroDivisionError):</p>
+
+            <h3>7.3 else va finally</h3>
+            <p>else — xato bo'lmasa, finally — har doim.</p>
+
+            <h3>7.4 raise</h3>
+            <p>raise Exception("Xato xabar")</p>
+
+            <h3>7.5 Umumiy xatolar</h3>
+            <p>SyntaxError, NameError, IndexError, KeyError, TypeError.</p>
+
+            <h3>7.6 Debugging</h3>
+            <p>print(), pdb, VS Code debugger.</p>
+        </section>
+
+        <section id="registratsiya" class="registration">
+            <h2>Registratsiya</h2>
+            <p>Telefon raqamingizni bog'lab, yangi darslar va maslahatlardan birinchilardan bo'lib xabardor bo'ling!</p>
+            <form action="#" method="post">
+                <input type="text" placeholder="Ismingiz" required>
+                <input type="tel" placeholder="+998 XX XXX XX XX" required>
+                <input type="email" placeholder="Email (ixtiyoriy)">
+                <button type="submit">Ro'yxatdan o'tish</button>
+            </form>
+            <p><small>Ma'lumotlar faqat o'quv maqsadlarda ishlatiladi.</small></p>
+        </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 Python Asoslari Sayti</p>
+        <p>&copy; 2025 Python Asoslari Sayti. Barcha huquqlar himoyalangan.</p>
     </footer>
 
 </body>
