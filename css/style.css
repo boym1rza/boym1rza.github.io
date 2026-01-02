@@ -8,14 +8,14 @@ body {
     margin: 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Orbitron', sans-serif;
     color: #00ffff;
     text-shadow: 0 0 20px #00ffff;
 }
 
 p.lead {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .navbar {
@@ -51,20 +51,28 @@ p.lead {
 }
 
 .btn-primary:hover {
-    background: #00ffff;
     box-shadow: 0 0 40px #00ffff;
     transform: scale(1.1);
-    color: #000;
 }
 
+/* Imkoniyatlar cardlari – yozuv kattaroq */
 .feature-card {
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid #00ffff;
     border-radius: 20px;
-    padding: 30px;
+    padding: 40px;
     text-align: center;
     transition: all 0.4s;
     height: 100%;
+}
+
+.feature-card h4 {
+    font-size: 1.8rem; /* Kattaroq sarlavha */
+    margin-bottom: 20px;
+}
+
+.feature-card p {
+    font-size: 1.2rem;
 }
 
 .feature-card:hover {
@@ -72,6 +80,7 @@ p.lead {
     transform: translateY(-10px);
 }
 
+/* Ro'yxatdan o'tish formasi */
 .form-card {
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #00ffff;
@@ -84,31 +93,40 @@ p.lead {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #00ffff;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 15px;
+    font-size: 1.2rem;
 }
 
-.form-control:focus {
-    box-shadow: 0 0 15px #00ffff;
-    border-color: #00ffff;
+.form-control::placeholder {
+    color: #ffffff !important; /* OQ placeholder */
+    opacity: 1;
 }
 
+/* FAQ */
 .accordion-item {
     background: rgba(0, 0, 0, 0.7);
     border: 1px solid #00ffff;
     border-radius: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .accordion-button {
     background: rgba(0, 0, 0, 0.8);
     color: #00ffff;
     border-radius: 15px !important;
+    font-size: 1.3rem;
 }
 
 .accordion-button:not(.collapsed) {
-    background: rgba(0, 255, 255, 0.2);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ffff;
     box-shadow: 0 0 20px #00ffff;
+}
+
+.accordion-body {
+    background: rgba(0, 0, 0, 0.8);
+    color: #e0e0e0;
+    font-size: 1.1rem;
 }
 
 footer p {
