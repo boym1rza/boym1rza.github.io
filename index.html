@@ -1,48 +1,139 @@
-<!-- Hero section -->
-<section class="hero">
-    <div class="container">
-        <h1 class="display-2 fw-bold">Pythonni Noldan O'rgan!</h1>
-        <p class="lead mt-4">Interaktiv darslar va misollar bilan</p>
-        <a href="#login" class="btn btn-primary btn-lg mt-4">Boshlash</a>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Dasturlash Asoslari | Rejavaliyev Boymirza</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<!-- About section -->
-<section id="about" class="py-5">
-    <div class="container text-center">
-        <h2 class="mb-4">Nega bu kurs?</h2>
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="card p-4">
-                    <h4>Oson</h4>
-                    <p>Sodda misollar bilan</p>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="#">🐍 Python Kursi</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#overview">Kurs haqida</a></li>
+                <li class="nav-item"><a class="nav-link" href="#syllabus">Darslar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#register">Boshlash</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-2 fw-bold">Python Dasturlash Asoslari</h1>
+            <p class="lead mt-4">Noldan professional darajagacha – bepul va interaktiv</p>
+            <a href="#register" class="btn btn-primary btn-lg">Boshlash</a>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="py-5">
+        <div class="container text-center">
+            <h2>Kurs haqida</h2>
+            <p class="lead">Python – sodda va kuchli til. Web, AI, ma'lumotlar va loyihalar uchun ideal.</p>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card p-4">
+                        <h4>Videodarslar</h4>
+                        <p>Istagan vaqtda ko'ring</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card p-4">
-                    <h4>Amaliy</h4>
-                    <p>Kod yoz va quiz qil</p>
+                <div class="col-md-4">
+                    <div class="card p-4">
+                        <h4>Mashqlar</h4>
+                        <p>Kod yozing va test qiling</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card p-4">
-                    <h4>Kuchli</h4>
-                    <p>Millionlab dasturchilar bilan</p>
+                <div class="col-md-4">
+                    <div class="card p-4">
+                        <h4>Loyihalar</h4>
+                        <p>Real misollar</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <p class="fs-4 mt-5"><strong>Muallif:</strong> Rejavaliyev Boymirza</p>
-    </div>
-</section>
+    </section>
+
+    <!-- Syllabus -->
+    <section id="syllabus" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5">Darslar ro'yxati (38 ta dars, 10 soat)</h2>
+            <div class="accordion" id="accordionSyllabus">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">1-dars: Kirish</button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">Python haqida asosiy ma'lumotlar.</div>
+                    </div>
+                </div>
+                <!-- 2-37 darslarni shu tarzda qo'shing, sarlavhalarni o'zgartiring -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse38">38-dars: So'ngso'z</button>
+                    </h2>
+                    <div id="collapse38" class="accordion-collapse collapse">
+                        <div class="accordion-body">Kurs yakuni va loyihalar.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register -->
+    <section id="register" class="py-5">
+        <div class="container text-center">
+            <h2>Boshlash</h2>
+            <p class="lead">Bepul ro'yxatdan o'ting va darslarga kiring.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card p-4">
+                        <input type="text" id="username" class="form-control mb-3" placeholder="Username">
+                        <input type="password" id="password" class="form-control mb-3" placeholder="Parol">
+                        <button onclick="register()" class="btn btn-primary me-2">Ro'yxatdan o'tish</button>
+                        <button onclick="login()" class="btn btn-outline-light">Kirish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor -->
+    <section class="py-5 bg-dark">
+        <div class="container text-center">
+            <h2>Muallif</h2>
+            <p class="lead">Rejavaliyev Boymirza – Python mutaxassisi.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Savollar</h2>
+            <div class="accordion" id="accordionFAQ">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Kurs bepulmi?</button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">Ha, to'liq bepul.</div>
+                    </div>
+                </div>
+                <!-- Qo'shimcha savollarni qo'shing -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="text-center">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 Rejavaliyev Boymirza. Barcha huquqlar himoyalangan.</p>
-        </div>
+        <p>+998 (78) 113 62 72 | @boym1rza</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/auth.js"></script>   <!-- MANA SHU YANGI QATOR -->
+    <script src="js/auth.js"></script>
 </body>
 </html>
