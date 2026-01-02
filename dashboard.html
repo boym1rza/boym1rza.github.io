@@ -10,42 +10,52 @@
 <body onload="checkLogin()">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fs-3 fw-bold" href="#">🐍 Python Kursi</a>
-            <button onclick="logout()" class="btn btn-outline-light">Chiqish</button>
+            <a class="navbar-brand fs-3 fw-bold" href="index.html">🐍 Python Kursi</a>
+            <button onclick="logout()" class="btn btn-outline-light rounded-pill px-4">Chiqish</button>
         </div>
     </nav>
 
-    <section class="py-5 mt-5">
-        <div class="container">
-            <h1 class="text-center mb-5">Darslar</h1>
-            <div class="row">
-                <!-- JS bilan 38 ta card generatsiya -->
-            </div>
-        </div>
+    <section class="container py-5 mt-5">
+        <h1 class="text-center mb-5 display-4">Darslar</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-5" id="lessons"></div>
     </section>
+
+    <footer class="text-center py-4">
+        <p class="mb-0">© 2026 Rejavaliyev Boymirza</p>
+    </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/auth.js"></script>
     <script>
         function checkLogin() {
             if (localStorage.getItem('loggedIn') !== 'true') {
+                alert('Iltimos, avval kirish qiling!');
                 window.location.href = 'index.html';
             } else {
-                const row = document.querySelector('.row');
-                for (let i = 1; i <= 38; i++) {
-                    row.innerHTML += `
-                        <div class="col-md-4 mb-4">
-                            <div class="card p-4 text-center">
-                                <h4>${i}-dars</h4>
-                                <a href="lessons/lesson-${i}.html" class="btn btn-primary">O'rganish</a>
-                            </div>
-                        </div>`;
-                }
+                generateLessons();
+            }
+        }
+
+        function generateLessons() {
+            const lessonsContainer = document.getElementById('lessons');
+            for (let i = 1; i <= 38; i++) {
+                const card = document.createElement('div');
+                card.className = 'col';
+                card.innerHTML = `
+                    <div class="lesson-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="lesson-title">${i}-dars</h4>
+                        </div>
+                        <a href="lessons/lesson-${i}.html" class="lesson-btn btn">O'rganish</a>
+                    </div>
+                `;
+                lessonsContainer.appendChild(card);
             }
         }
 
         function logout() {
             localStorage.removeItem('loggedIn');
+            localStorage.removeItem('user');
             window.location.href = 'index.html';
         }
     </script>
