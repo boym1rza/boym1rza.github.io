@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0d1117, #161b22);
+    color: #c9d1d9;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.navbar {
+    background: rgba(13, 17, 23, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #30363d;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/python-bg.jpg') center/cover no-repeat;
+    padding: 140px 0 100px;
+    text-align: center;
+}
+
+h1.display-3 {
+    color: #58a6ff;
+    font-weight: 700;
+}
+
+.lead {
+    font-size: 1.4rem;
+}
+
+.btn-primary {
+    background: #238636;
+    border: none;
+    padding: 14px 36px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2ea043;
+    transform: scale(1.05);
+}
+
+.card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(88, 166, 255, 0.2);
+}
+
+footer {
+    background: #0d1117;
+    padding: 40px 0;
+    border-top: 1px solid #30363d;
+    margin-top: 80px;
+}
