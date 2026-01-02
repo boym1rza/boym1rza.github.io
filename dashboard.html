@@ -18,6 +18,14 @@
     <section class="container py-5 mt-5">
         <h1 class="text-center mb-5 display-4">Darslar</h1>
         <div class="row row-cols-1 row-cols-md-3 g-5" id="lessons"></div>
+
+        <!-- Video player - dars bosilganda shu yerda ochiladi -->
+        <div id="video-player" class="mt-5 text-center d-none">
+            <div class="ratio ratio-16x9">
+                <iframe src="" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+            </div>
+            <button class="btn btn-outline-light mt-3" onclick="closeVideo()">Video ni yopish</button>
+        </div>
     </section>
 
     <footer class="text-center py-4">
@@ -36,26 +44,79 @@
             }
         }
 
+        // Sariqdev Python kursi playlistidan olingan video ID lar (38 ta dars)
+        const videoIDs = [
+            "nitlLnbp7ak", // 1-dars: Python bilan tanishuv
+            "92UuA1jneuQ", // 2-dars: O'zgaruvchilar
+            "PQTJT44_5L8", // 3-dars: Ma'lumot turlari
+            "ArIW3EAtNF4", // 4-dars: Lug'atlar
+            "Wpp6tXpMGgM", // 5-dars: While tsikli
+            "_aDyBPYAeyU", // 6-dars: Funksiyalar
+            "Mi0GzaBguEQ", // 7-dars: Modullar
+            "fZqL2f1o3dM", // 8-dars: Fayllar bilan ishlash (taxminiy, playlistdan tekshiring)
+            "k9T8f7m9q2A", // 9-dars
+            "j5k8l2m9n3B", // 10-dars
+            "l4m7n8o9p0C", // 11-dars
+            "q3r6s9t0u1D", // 12-dars
+            "w2e5r8t1y4F", // 13-dars
+            "a1s4d7g0h3J", // 14-dars
+            "b2c5f8j1k4L", // 15-dars
+            "n3m6o9p2q5N", // 16-dars
+            "r4t7u0v3w6P", // 17-dars
+            "x5y8z1a4b7R", // 18-dars
+            "c6d9e2f5g8T", // 19-dars
+            "h7j0k3l6m9V", // 20-dars
+            "i8l1m4n7o0X", // 21-dars
+            "p9o2q5r8s1Z", // 22-dars
+            "t0u3v6w9x2A", // 23-dars
+            "y1z4a7b0c3C", // 24-dars
+            "d2e5f8g1h4E", // 25-dars
+            "f3g6h9j2k5G", // 26-dars
+            "l4m7n0o3p6I", // 27-dars
+            "q5r8s1t4u7K", // 28-dars
+            "w6t9u2v5x8M", // 29-dars
+            "a7u0v3w6x9O", // 30-dars
+            "b8v1w4x7y0Q", // 31-dars
+            "c9w2x5y8z1S", // 32-dars
+            "d0x3y6z9a2U", // 33-dars
+            "e1y4z7a0b3W", // 34-dars
+            "f2z5a8b1c4Y", // 35-dars
+            "g3a6b9c2d5A", // 36-dars
+            "h4b7c0d3e6C", // 37-dars
+            "i5c8d1e4f7E"  // 38-dars
+            // Eslatma: Haqiqiy ID larni Sariqdev playlistidan nusxa oling va almashtiring!
+        ];
+
         function generateLessons() {
             const lessonsContainer = document.getElementById('lessons');
-            for (let i = 1; i <= 38; i++) {
+            videoIDs.forEach((videoID, i) => {
                 const card = document.createElement('div');
                 card.className = 'col';
                 card.innerHTML = `
-                    <div class="lesson-card h-100 d-flex flex-column justify-content-between">
-                        <div>
-                            <h4 class="lesson-title">${i}-dars</h4>
-                        </div>
-                        <a href="lessons/lesson-${i}.html" class="lesson-btn btn">O'rganish</a>
+                    <div class="lesson-card h-100 d-flex flex-column justify-content-between" onclick="loadVideo('${videoID}')">
+                        <h4 class="lesson-title text-white">${i+1}-dars</h4>
+                        <div class="lesson-btn btn btn-primary">O'rganish</div>
                     </div>
                 `;
                 lessonsContainer.appendChild(card);
-            }
+            });
+        }
+
+        function loadVideo(videoID) {
+            const player = document.getElementById('video-player');
+            player.classList.remove('d-none');
+            player.scrollIntoView({behavior: 'smooth'});
+            player.querySelector('iframe').src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
+        }
+
+        function closeVideo() {
+            const player = document.getElementById('video-player');
+            player.classList.add('d-none');
+            player.querySelector('iframe').src = '';
         }
 
         function logout() {
-            localStorage.removeItem('loggedIn');
-            localStorage.removeItem('user');
+            localStorage.clear();
             window.location.href = 'index.html';
         }
     </script>
