@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fs-3" href="#">🐍 Python Kursi</a>
+            <a class="navbar-brand fs-3 fw-bold" href="#">🐍 Python Kursi</a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">Kurs haqida</a></li>
                 <li class="nav-item"><a class="nav-link" href="#features">Imkoniyatlar</a></li>
@@ -29,43 +29,82 @@
         </div>
     </section>
 
-    <section id="about" class="py-5">
-        <div class="container text-center">
-            <div class="bg-dark p-5 rounded-4" style="background: rgba(0,0,0,0.6) !important;">
-                <h2 class="mb-4">Kurs haqida</h2>
-                <p class="lead">Bu kurs Python tilini noldan o'rganmoqchi bo'lganlar uchun maxsus tayyorlangan. Har bir dars amaliy misollar, kod sinash va quizlar bilan boyitilgan.</p>
+    <div class="container">
+        <section id="about" class="my-5">
+            <div class="section-container text-center">
+                <h2>Kurs haqida</h2>
+                <p class="lead mt-4">Bu kurs Python tilini noldan o'rganmoqchi bo'lganlar uchun maxsus tayyorlangan. Har bir dars amaliy misollar, kod sinash va quizlar bilan boyitilgan.</p>
                 <p class="fs-3 mt-5 text-white">"Kod yozish – bu san'at" – Rejavaliyev Boymirza</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="features" class="py-5">
-        <div class="container">
+        <section id="features" class="my-5">
             <h2 class="text-center mb-5">Kurs imkoniyatlari</h2>
-            <div class="row g-4"> <!-- Yaqinroq joylashuv -->
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="feature-card text-center h-100">
+                    <div class="feature-card">
                         <h4>Videodarslar</h4>
                         <p>Istagan vaqtingizda qayta ko'ring</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card text-center h-100">
+                    <div class="feature-card">
                         <h4>Mashqlar</h4>
                         <p>Kod yozing va natijani ko'ring</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card text-center h-100">
+                    <div class="feature-card">
                         <h4>Loyihalar</h4>
                         <p>Real hayotdagi misollar bilan ishlang</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Register va FAQ qismlari oldingidek qoldirdim, lekin form-card class bilan yangilandi -->
+        <section id="register" class="my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="form-card">
+                        <h3 class="text-center mb-5">Ro'yxatdan o'tish</h3>
+                        <div class="mb-4">
+                            <input type="text" id="username" class="form-control form-control-lg" placeholder="Username">
+                        </div>
+                        <div class="mb-5">
+                            <input type="password" id="password" class="form-control form-control-lg" placeholder="Parol">
+                        </div>
+                        <div class="text-center">
+                            <button onclick="register()" class="btn btn-primary btn-lg me-3">Ro'yxatdan o'tish</button>
+                            <button onclick="login()" class="btn btn-outline-light btn-lg">Kirish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="my-5">
+            <h2 class="text-center mb-5">Tez-tez so'raladigan savollar</h2>
+            <div class="accordion" id="faqAccordion">
+                <!-- Oldingi FAQ kodini shu yerga qo'ying (7 ta savol) -->
+                <!-- Misol uchun birinchisi -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Kurs bepulmi?</button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">Ha, kurs to'liq bepul va hech qanday yashirin to'lov yo'q.</div>
+                    </div>
+                </div>
+                <!-- Qolgan 6 ta savolni oldingi kodlardan nusxa oling -->
+            </div>
+        </section>
+    </div>
+
+    <footer class="text-center py-5">
+        <div class="container">
+            <p>© 2026 Rejavaliyev Boymirza | Telegram: @boym1rza</p>
+        </div>
+    </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/auth.js"></script>
