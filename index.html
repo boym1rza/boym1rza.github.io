@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Dasturlash Asoslari | Rejavaliyev Boymirza</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="#">🐍 Python Kursi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Kurs haqida</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#login">Kirish</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Hush kelibsiz!</h1>
+            <p class="lead mt-4">Python Dasturlash Tilini Noldan Professional Darajagacha O'rganing</p>
+            <p class="fs-4 mt-3">38 ta batafsil dars • Interaktiv misollar • Quizlar • Bepul</p>
+            <a href="#login" class="btn btn-primary btn-lg mt-4">Kursni boshlash</a>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Kurs haqida</h2>
+                    <p class="lead">Bu kurs Python dasturlash tilini noldan boshlab, amaliy loyihalar bilan o'rganmoqchi bo'lganlar uchun maxsus tayyorlangan.</p>
+                    <p class="lead">Har bir darsda nazariya, kod misollari, mashqlar va quizlar mavjud.</p>
+                    <p class="fs-5 mt-4"><strong>Muallif:</strong> Rejavaliyev Boymirza</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Register section -->
+    <section id="login" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card p-5">
+                        <h3 class="text-center mb-4">Kirish yoki Ro'yxatdan o'tish</h3>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg" id="username" placeholder="Username kiriting">
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" class="form-control form-control-lg" id="password" placeholder="Parol kiriting">
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-lg me-3" onclick="register()">Ro'yxatdan o'tish</button>
+                            <button class="btn btn-outline-light btn-lg" onclick="login()">Kirish</button>
+                        </div>
+                        <p class="text-center mt-4 text-muted">Ro'yxatdan o'tish orqali barcha darslarga kirish huquqi olasiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Rejavaliyev Boymirza. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Hozircha auth.js yo'q, shuning uchun oddiy funksiyalar
+        function register() {
+            alert("Keyinroq autentifikatsiya qo'shiladi. Hozircha dashboardga o'ting!");
+            window.location.href = "dashboard.html";
+        }
+        function login() {
+            alert("Keyinroq autentifikatsiya qo'shiladi. Hozircha dashboardga o'ting!");
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>
