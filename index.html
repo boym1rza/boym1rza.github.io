@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fs-3 fw-bold" href="#">🐍 Python Kursi</a>
+            <a class="navbar-brand fs-3 fw-bold" href="#">Python Kursi</a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">Kurs haqida</a></li>
                 <li class="nav-item"><a class="nav-link" href="#features">Imkoniyatlar</a></li>
@@ -65,18 +65,15 @@
         <section id="register" class="my-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="form-card">
-                        <h3 class="text-center mb-5">Ro'yxatdan o'tish</h3>
+                    <div class="form-card text-center">
+                        <h3 class="mb-5">Ro'yxatdan o'tish</h3>
                         <div class="mb-4">
                             <input type="text" id="username" class="form-control form-control-lg" placeholder="Username">
                         </div>
                         <div class="mb-5">
                             <input type="password" id="password" class="form-control form-control-lg" placeholder="Parol">
                         </div>
-                        <div class="text-center">
-                            <button onclick="register()" class="btn btn-primary btn-lg me-3">Ro'yxatdan o'tish</button>
-                            <button onclick="login()" class="btn btn-outline-light btn-lg">Kirish</button>
-                        </div>
+                        <button onclick="register()" class="btn btn-primary btn-lg px-5">Ro'yxatdan o'tish</button>
                     </div>
                 </div>
             </div>
@@ -85,17 +82,62 @@
         <section id="faq" class="my-5">
             <h2 class="text-center mb-5">Tez-tez so'raladigan savollar</h2>
             <div class="accordion" id="faqAccordion">
-                <!-- Oldingi FAQ kodini shu yerga qo'ying (7 ta savol) -->
-                <!-- Misol uchun birinchisi -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Kurs bepulmi?</button>
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">1. Kurs bepulmi?</button>
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse show">
                         <div class="accordion-body">Ha, kurs to'liq bepul va hech qanday yashirin to'lov yo'q.</div>
                     </div>
                 </div>
-                <!-- Qolgan 6 ta savolni oldingi kodlardan nusxa oling -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">2. Sertifikat beriladimi?</button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse">
+                        <div class="accordion-body">Ha, kursni tugatgandan so'ng raqamli sertifikat beriladi.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">3. Python o'rganish uchun oldindan bilim kerakmi?</button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse">
+                        <div class="accordion-body">Yo'q, kurs mutlaqo noldan boshlanadi.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">4. Darslar qachon yangilanadi?</button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse">
+                        <div class="accordion-body">Yangi darslar va misollar muntazam qo'shiladi.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">5. Mobil qurilmada o'qish mumkinmi?</button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse">
+                        <div class="accordion-body">Ha, sayt telefon va planshetlarda to'liq ishlaydi.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">6. Savollarim bo'lsa kimga yozaman?</button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse">
+                        <div class="accordion-body">Telegram: @boym1rza orqali bog'laning.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">7. Kurs qancha vaqt oladi?</button>
+                    </h2>
+                    <div id="faq7" class="accordion-collapse collapse">
+                        <div class="accordion-body">O'rtacha 2-3 oy (kuniga 1 soat o'qisangiz).</div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
